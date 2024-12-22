@@ -10,10 +10,6 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ['review_text', 'review_image']
 
-# class CustomerReviewForm(forms.ModelForm):
-#     class Meta:
-#         model = CustomerReview
-#         fields = ['review_text', 'review_image']
 
 class WhatsAppForm(forms.Form):
     phone_number = forms.CharField(label='Phone Number', max_length=20)
@@ -29,8 +25,3 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-
-# class ArticleForm(forms.ModelForm):
-#     class Meta:
-#         model = Article
-#         fields = ['title', 'content', 'image']
