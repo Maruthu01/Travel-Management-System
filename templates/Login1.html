@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Management System</title>
+    <link rel="stylesheet" href="../static/css/bookin.css">
+
+    
+
+    <link rel="js" href="../static/js/prac.js">
+    <link rel="stylesheet" href="../templates/success.html">
+    <link rel="stylesheet" href="../templates/Message.html">
+    <link rel="stylesheet" href="../templates/pro.html">
+    <link rel="stylesheet" href="../templates/prac.html">
+
+    
+
+</head>
+<body>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+    
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+    
+        
+        input[type="text"], input[type="date"], input[type="number"], input[list] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    
+        datalist {
+            border: 1px solid #ddd;
+        }
+    
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+    
+        
+        button a {
+            text-decoration: none;
+            color: white;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    
+        
+        @media (max-width: 600px) {
+            form {
+                width: 100%;
+                padding: 15px;
+            }
+    
+            input[type="text"], input[type="date"], input[type="number"], input[list] {
+                font-size: 12px;
+            }
+    
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+    
+
+            <form>
+                <div>
+                    <label for="destination">Destination</label>
+                    <input list="destinations" id="destination" name="destination" placeholder="Enter destination" required>
+                    <datalist id="destinations">
+                        <option value="Pondicherry"></option>
+                        <option value="Chennai"></option>
+                        <option value="Delhi"></option>
+                        <option value="Mumbai"></option>
+                        <option value="Bangalore"></option>
+                        <option value="Kolkata"></option>
+                        <option value="Hyderabad"></option>
+                        <option value="Pune"></option>
+                        <option value="Maharashtra"></option>
+                        <option value="Punjab"></option>
+
+                        
+                    </datalist>
+                </div>
+            
+                <div>
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                
+                <div>
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                
+                <div>
+                    <label for="guests">Guests</label>
+                    <input type="number" id="guests" name="guests" min="1" value="1" required>
+                </div>
+                
+                <div>
+                    <button type="submit"><a href="{% url 'Payment' %}" style="width: 50px ;">Submit</button></a>
+                </div>
+            </form>
+
+            
+    </div>
+
+
+ 
+    
+</body>
+</html>

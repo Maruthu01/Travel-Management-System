@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/js/prac.js">
+    <script defer src="../static/js/prac.js"></script>
+    <link rel="pro.html" href="../templates/pro.html">
+    <link rel="pro.html" href="../templates/Register_page.html">
+    <script src="../static/jquery/jquery.min.js"></script>
+    
+    <link rel="shortcut icon" href=".favicon.svg" type="image/svg+xml">
+    
+
+    
+
+
+        <!-- #google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+  <link rel="stylesheet" href="../templates/Booking_area.html">
+
+
+
+</head>
+<body>
+
+
+        <div class="header-top">
+    
+        <div class="container">
+            <!-- <ul class="social-list" style="list-style: none;"> -->
+            <h1 class="one">WE WELCOME'S FOR A HAPPY AND SAFE JOURNEY</h1>
+            
+     
+</ul>
+</div>
+        
+<div class="two">
+    <ul class="nav flex-column">
+        <li class="nav-item mb-0 ms-5" >
+            <a href="#H10" class="nav-link active " aria-current="page" >Home</a>
+        </li>
+        <li class="nav-item mb-2">
+            <a href="#cont2" class="nav-link">Packages</a>
+        </li>
+        <li class="nav-item mb-2">
+            <a href="#contact_us" class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item mb-2">
+            <a href="About" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item mb-2">
+            <a href="{% url 'login' %}" class="nav-link text-danger">LOGOUT</a>
+        </li>
+    </ul>
+</div>
+
+
+<!--        
+
+            <div class="two">
+                        <ul>
+                            <li>
+                                <a href="#H10" class="navbar link" data-nav-link>Home</a>
+                            </li>                                                       
+                             <li>
+                                <a href="#cont2" class="navbar link" data-nav-link>Packages</a>
+                            </li>                            
+                            <li>
+                                <a href="#contact_us" class="navbar link" data-nav-link>Contact Us</a>
+                            </li>    
+                            <li>
+                                <a href="About" class="navbar link" data-nav-link>About Us</a>
+                            </li>        
+                            <li>
+                            <a href="{% url 'login'%}" class="navbar link" >LOGOUT</a>
+                            </li>        
+                        </div>       
+                             -->
+            
+                        
+    </header>
+
+
+ 
+    <h1 class="h1" id="H10" style="margin-top: 850px;">PACKAGES FOR YOU</h1>
+    <div class="container2" id="cont2" >
+
+        <img class="phot1" style="margin-top: 400px;" src="../static/css/image/pexels-efrem-efre-2786187-19143042.jpg" onclick="window.location.href='Bookin';" alt="">
+        <img class="phot1" style="margin-top: 250px;" src="../static/css/image/pexels-jakubzerdzicki-27376821.jpg" onclick="window.location.href='Bookin';" alt="">
+        <img class="phot1" src="../static/css/image/pexels-efrem-efre-2786187-25102438.jpg" onclick="window.location.href='Bookin';" alt="">
+
+        <H1 class="img1" style="margin-left: 90px;">SEASHORE VIEWS</H1>
+        <H1 class="img1">HOTELS</H1>
+        <H1 class="img1">CITY VIEWS</H1>
+        
+            
+
+        <main>
+     
+            <div class="carousel-container">
+              <div class="carousel-slide1">
+               <div class="C1" id="color1"> <br><h1>SEA VIEWS </h1>  
+             
+                </div>
+          
+                
+              </div>
+              <div class="carousel-slide2">
+                <div class="C1" id="color2"> <h1>CLOCK TOWER</h1></div>
+              </div>
+      
+              <div class="carousel-slide4">
+                <div class="C1" id="color4"> <h1>PHOTO SHOOT SPOTS</h1></div>
+              </div>
+              <div class="carousel-slide5">
+                <div class="C1" id="color5"> <h1>CYCLING</h1></div>
+              </div>
+              <div class="carousel-slide6">
+                <div class="C1" id="color6"> <h1>WATER FALLS</h1></div>
+              </div>
+              <div class="carousel-slide8">
+                <div class="C1" id="color8"> ,<h1>SUNSET FROM TOWER</h1></div>
+              </div>
+
+              <div class="carousel1"></div>
+              <div class="carousel2"></div>
+              <div class="carousel3"></div>
+              <div class="carousel4"></div>
+              <div class="carousel5"></div>
+              <div class="carousel6"></div>
+              <div class="carousel7"></div>
+              <div class="carousel8"></div>
+
+            </div>
+          
+            
+
+
+        
+            <!-- <h2>Your Reviews</h2>
+<a href="{% url 'add_review' %}">Add Review</a>
+<ul>
+    {% for review in reviews %}
+    <li>
+        <p>{{ review.review_text }}</p>
+        {% if review.review_image %}
+        <img src="{{ review.review_image.url }}" alt="Review Image" style="max-width: 200px;">
+        {% endif %}
+        {% if review.user == request.user %}
+        <a href="{% url 'update_review' review.id %}">Edit</a>
+        <form action="{% url 'delete_review' review.id %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul> -->
+
+    
+    
+          </main>
+
+          
+
+
+        <div class="Regis-container">
+            <div class="Register">
+                <a href="Bookin">Flight Bookings</a>
+                <a href="hotel-reservations.html">Hotel Reservations</a>
+                <a href="tour-packages.html">Tour Packages</a>
+                <a href="travel-insurance.html">Travel Insurance</a>
+                <a href="car-rentals.html">Car Rentals</a>
+                <a href="visa-assistance.html">Visa Assistance</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="cust">
+        EXPERIENCE SHARED BY OUR CUSTOMERS
+    </div>
+
+    
+    {% include 'list_reviews.html' %}
+
+<!-- 
+
+    <footer class="footer" id="contact_us">
+      <div class="footer-content">
+          <div class="footer-section about">
+              <h2>About Us</h2>
+              <p>We are a travel management company committed to providing exceptional travel experiences. Our mission is to make your travel easy and enjoyable.</p>
+          </div>
+          
+          <div class="footer-section contact">
+              <h2>Contact Us</h2>
+              <ul>
+                  <li><i class="fa fa-map-marker"></i> 123 Travel Street, Suite 456, City, Country</li>
+                  <li><i class="fa fa-phone"></i> +1 234 567 890</li>
+                  <li><i class="fa fa-envelope"></i> <a href="mailto:Marsconsultancy@example.com">Mars@example.com</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-section social">
+              <h2>Follow Us</h2>
+              <ul>
+                  <li><a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="footer-bottom">
+          <p>&copy; 2024 Travel Management System. All rights reserved.</p>
+          <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+  </footer> -->
+
+  
+    
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Reviews</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fixed Size Card */
+        .review-card {
+            height: 450px; /* Fixed height for all cards */
+            width: 100%; /* Full width of the container (you can adjust this) */
+            max-width: 350px; /* Fixed maximum width */
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px); /* Slight lift effect on hover */
+        }
+
+        /* Fixed Size Image Container */
+        .review-image-container {
+            position: relative;
+            width: 100%;
+            height: 250px; /* Fixed height for all images */
+            overflow: hidden; /* Ensure image doesn't spill over */
+        }
+
+        .review-image-container img {
+            width: 100%; /* Ensure the image takes full width of the container */
+            height: 100%; /* Ensure the image takes full height of the container */
+            object-fit: cover; /* Maintain image aspect ratio while filling the container */
+            transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+        }
+
+        /* Overlay text container inside the image */
+        .review-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+            transform: translateY(100%); /* Hide text initially */
+        }
+
+        /* Hover effect: Reveal text and zoom image */
+        .review-image-container:hover .review-text {
+            opacity: 1;
+            transform: translateY(0); /* Slide text up */
+        }
+
+        .review-image-container:hover img {
+            transform: scale(1.1); /* Zoom in the image */
+        }
+
+        /* Card Body Styling */
+        .card-body {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body p {
+            flex-grow: 1;
+            overflow: hidden; /* Ensure text doesn't overflow the card */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Ensure consistent button placement */
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .card-body .btn {
+            margin-left: 5px;
+        }
+
+        /* To ensure the layout adapts well on smaller screens */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* On smaller screens, show one card per row */
+        @media (max-width: 768px) {
+            .review-card {
+                max-width: 100%; /* Allow cards to take full width on small screens */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Your Reviews</h2>
+
+        <!-- Add Review Button -->
+        <a href="{% url 'add_review' %}" class="btn btn-primary mb-3">Add Review</a>
+
+        <!-- Reviews List -->
+        <div class="row">
+            {% for review in reviews %}
+            <div class="col-md-4 mb-4 d-flex justify-content-center">
+                <div class="card review-card">
+                    
+                    <div class="review-image-container">
+                        {% if review.review_image %}
+                        <img src="{{ review.review_image.url }}" alt="Review Image" class="card-itop" loading="lazy">
+                        {% endif %}
+                        <p class="review-text bg-muted text-light">{{ review.review_text }}</p>
+                    </div>
+
+                    
+                    <div class="card-body text-end">
+                        <p class="card-text">{{ review.review_text }}</p> 
+                        <div class="btn-group">
+                            {% if review.user == request.user %}
+                            <a href="{% url 'update_review' review.id %}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{% url 'delete_review' review.id %}" method="POST" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    No reviews available.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

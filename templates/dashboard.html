@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Your Articles</h2>
+    <a href="{% url 'create_article' %}" class="btn btn-success mb-3">Create New Article</a>
+    <ul class="list-group">
+        {% for article in articles %}
+        <li class="list-group-item">
+            <h5>{{ article.title }}</h5>
+            <p>{{ article.content }}</p>
+            {% if article.image %}
+            <img src="{{ article.image.url }}" class="img-thumbnail" style="max-width: 200px;">
+            {% endif %}
+            <a href="{% url 'update_article' article.pk %}" class="btn btn-warning btn-sm">Edit</a>
+            <a href="{% url 'delete_article' article.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

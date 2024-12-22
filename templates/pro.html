@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/jQuery/jquery.min.js">
+    <link rel="js" href="../static/js/prac.js">
+    <link rel="html" href="prac.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ2QGv5nKhY2xeYfK4CmPbmHid4u5rT14fuYsZn0XU+Ygy6c5K0WrfeSzGFC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="html" href="Login1.html">
+    
+    
+</head>
+<body>
+  
+    {% include 'Navbar.html' %}
+    <div class="Registerpage">
+        <h1 id="ht1">SIGN UP</h1>
+
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+
+        <form method="post" autocomplete="off">
+            
+            {% csrf_token %}
+            <input class="form1" type="text" name="F_name" placeholder="First name" required>
+            <input class="form1" type="text" name="L_name" placeholder="Last name" required>
+            <input class="form1" type="email" name="Email_id" placeholder="Email ID" required>
+            <input class="form1" type="text" name="Mob_num" placeholder="Mobile number" required>
+            <input class="form1" type="password" name="Password" placeholder="Password" required>
+            <input class="form1" type="password" name="Conf_password" placeholder="Confirm Password" required>
+
+
+
+            <div class="terms">
+                <input type="checkbox"  id="checkbox" name="terms_checked">
+                <label for="checkbox">I agree with the <a href="#">terms and conditions </a> </label>
+            </div>
+            
+            <button class="btn1" type="submit"><a href="{% url 'Login1'%}"></a>SIGN UP </button>
+
+           
+
+        </form>
+
+        <div class="alert">
+            <span class="success"></span>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-wk7zX2O+XztiIn2tysJ1tytcgGGZG7Gi2fP/8ssRm0qOeqBxIMKmt4xXB/xXBcCg" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Sent</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    h1 {
+        color: #4CAF50;
+    }
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        border-radius: 5px;
+    }
+    a:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    
+    
+    <h1>Booking Confirmed!</h1>
+    <p>Your booking has been confirmed and a WhatsApp message has been sent.</p>
+    <a href="{% url 'Welcome' %}">THANKS FOR BOOKING</a>
+</body>
+</html>
